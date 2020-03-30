@@ -386,6 +386,7 @@ end
 function shell.runURL(url)
 	if (fsexists("/tmp")) then fsdel("/tmp") end
 	fsdownload(url, "/tmp")
+	shell.run("/tmp")
 	fsdel("/tmp")
 end
 
