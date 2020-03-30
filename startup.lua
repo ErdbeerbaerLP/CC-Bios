@@ -504,6 +504,9 @@ if fsexists("/disk/bios.bin") then
 		fs.delete(getAttribPath("/disk/bios.bin"))
 		fs.move("/disk/startupOS", "/disk/startup")
 		print("Installation successful, rebooting")
+		BIOS.lockRoot()
+		sleep(2)
+		os.reboot()
 	else
 		print("Invalid Password.")
 		sleep(2)
