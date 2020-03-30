@@ -354,9 +354,9 @@ function fs.delete(file)
 end
 
 function fs.download(url, file)
-	local conn = http.get(url)
 	local attempts = 0
 	while attempts < 10 do
+		local conn = http.get(url)
 		if conn then
 			local handler = io.open(file, "w")
 			handler:write(conn.readAll())
@@ -369,9 +369,9 @@ function fs.download(url, file)
 end
 
 local function fsdownload(url, file)
-	local conn = http.get(url)
 	local attempts = 0
 	while attempts < 10 do
+		local conn = http.get(url)
 		if conn then
 			local handler = ioopen(file, "w")
 			handler:write(conn.readAll())

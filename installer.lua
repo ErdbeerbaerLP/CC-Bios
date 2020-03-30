@@ -1,7 +1,7 @@
 local function download(url, file)
-    local conn = http.get(url)
     local attempts = 0
     while attempts < 10 do
+        local conn = http.get(url)
         if conn then
             local handler = io.open(file, "w")
             handler:write(conn.readAll())
