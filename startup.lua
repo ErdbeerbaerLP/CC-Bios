@@ -26,7 +26,7 @@ local biosPassword = "0000"
 local defaultBootEntry = 0
 local bootEntries = "CRAFTOS,/startup_os,/disk/os,/disk/startup"
 
-function BIOS.unlockRoot(passwd)
+function BIOSunlockRoot(passwd)
 	if passwd == biosPassword then
 		if LOCKfsdel == nil or LOCKioopen == nil or LOCKfsronly == nil or LOCKfsmv == nil or LOCKfsexists == nil or LOCKfslist == nil or LOCKfsopen == nil then
 			LOCKfsopen = fs.open
@@ -49,7 +49,7 @@ function BIOS.unlockRoot(passwd)
 	end
 end
 
-function BIOS.lockRoot()
+function BIOSlockRoot()
 	if LOCKfsdel == nil or LOCKioopen == nil or LOCKfsronly == nil or LOCKfsmv == nil or LOCKfsexists == nil or LOCKfslist == nil or LOCKfsopen == nil then
 		error("BIOS is already locked!", 2)
 	else
